@@ -1,0 +1,55 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name</label>
+  <input type="text" id="name" formControlName="name">
+
+  <label for="email">Email</label>
+  <input type="email" id="email" formControlName="email">
+
+  <label for="phone">Phone</label>
+  <input type="tel" id="phone" formControlName="phone">
+
+  <div formGroupName="address">
+    <label for="street">Address</label>
+    <input type="text" id="street" formControlName="address">
+
+
+  </div>
+
+  <div formArrayName="skills">
+    <div *ngFor="let skill of skillsArray.controls; let i = index" [formGroupName]="i">
+      <label for="skillName{{i}}">Skill Name</label>
+      <input type="text" id="skillName{{i}}" formControlName="name">
+
+      <label for="skillLevel{{i}}">Skill Level</label>
+      <input type="text" id="skillLevel{{i}}" formControlName="level">
+
+    </div>
+
+    <button type="button" (click)="addSkill()">Add Skill</button>
+  </div>
+  <div formArrayName="education">
+    <div *ngFor="let item of educationArray.controls; let i = index" [formGroupName]="i">
+      <label for="Field{{i}}">Level</label>
+      <input type="text" id="Field" formControlName="name">
+
+      <label for="level{{i}}"> Score</label>
+      <input type="text" id="level{{i}}" formControlName="level">
+
+    </div>
+
+    <button type="button" (click)="addEducation()">Add Education</button>
+  </div>
+  <div formArrayName="certificate">
+    <div *ngFor="let certificate of certificateArray.controls; let i = index" [formGroupName]="i">
+      <label for="certificateName{{i}}">certificate Name</label>
+      <input type="text" id="certificateName{{i}}" formControlName="name">
+
+      <label for="Level{{i}}">Skill Level</label>
+      <input type="text" id="Level{{i}}" formControlName="level">
+
+    </div>
+
+    <button type="button" (click)="addCertificate()">Add Certificate</button>
+  </div>
+  <button type="submit">submit</button>
+</form>
