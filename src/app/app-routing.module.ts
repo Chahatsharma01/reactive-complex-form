@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MyformComponent } from './myform/myform.component';
+import { BooksComponent } from './books/books.component';
 
 const routes: Routes = [
   {
     path : '',
-    component : MyformComponent
+    component : BooksComponent
   }
 ];
 

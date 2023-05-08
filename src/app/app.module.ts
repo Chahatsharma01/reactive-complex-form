@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MyformComponent } from './myform/myform.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { BooksComponent } from './books/books.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyformComponent
+    MyformComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule,
